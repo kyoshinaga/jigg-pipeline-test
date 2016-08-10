@@ -1,1 +1,7 @@
 models/*
+edu/*
+syntaxnet/*
+Dockerfile
+json/*.json
+json/*.xml
+xml/*.xml
