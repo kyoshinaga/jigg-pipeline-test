@@ -117,7 +117,7 @@ else
   cd $MODELDIR/syntaxnet/syntaxnet/tensorflow
   ./configure
   cd ..
-  bazel test syntexnet/... util/utf8/...
+  bazel test syntaxnet/... util/utf8/...
 fi
 
 cd $WORKDIR

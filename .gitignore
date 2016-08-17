@@ -5,3 +5,6 @@ Dockerfile
 json/*.json
 json/*.xml
 xml/*.xml
+*.pyc
+.*
+syntaxnet
