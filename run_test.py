@@ -34,16 +34,18 @@ class TestSequenceFunctions(unittest.TestCase):
         subprocess.call(cmd + ' -props ./props/english_corenlp_pos_test_json.properties', shell = True)
         subprocess.call(cmd + ' -props ./props/english_corenlp_lemma_gold_json.properties', shell = True)
         subprocess.call(cmd + ' -props ./props/english_corenlp_lemma_test_json.properties', shell = True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_ner_gold_json.properties', shell = True)
 
         # XML -> JSON
         subprocess.call(cmd + ' -props ./props/english_corenlp_pos_test_xml_json.properties', shell = True)
         subprocess.call(cmd + ' -props ./props/english_corenlp_lemma_test_xml_json.properties', shell = True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_ner_test_xml_json.properties', shell = True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_parse_test_xml_json.properties', shell = True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_depparse_test_xml_json.properties', shell = True)
+        #subprocess.call(cmd + ' -props ./props/english_corenlp_ner_test_xml_json.properties', shell = True)
+        #subprocess.call(cmd + ' -props ./props/english_corenlp_parse_test_xml_json.properties', shell = True)
+        #subprocess.call(cmd + ' -props ./props/english_corenlp_depparse_test_xml_json.properties', shell = True)
 
         # JSON -> XML
         subprocess.call(cmd + ' -props ./props/english_corenlp_pos_test_json_xml.properties', shell = True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_lemma_test_json_xml.properties', shell = True)
 
 
     def test_1_corenlp_1_pos(self):
@@ -59,8 +61,12 @@ class TestSequenceFunctions(unittest.TestCase):
 
     def test_1_corenlp_2_lemma(self):
         testRoot = ET.parse('./xml/english_corenlp_lemma_test.xml').getroot()
+        testJsonRoot = ET.parse('./xml/english_corenlp_lemma_test_json.xml').getroot()
         goldRoot = ET.parse('./xml/english_corenlp_lemma_gold.xml').getroot()
         self.assertTrue(cm.xml_compare(goldRoot, testRoot, self.reporter))
+        self.assertTrue(cm.xml_compare(goldRoot, testJsonRoot, self.reporter))
+        self.assertTrue(cm.json_comp('./json/english_corenlp_lemma_gold.json', \
+            './json/english_corenlp_lemma_test_xml.json'))
         self.assertTrue(cm.json_comp('./json/english_corenlp_lemma_gold.json', \
             './json/english_corenlp_lemma_test.json'))
 
