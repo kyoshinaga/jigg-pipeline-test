@@ -2,6 +2,7 @@
 Repository for integrating test using by intermediate input option of jigg.
 
 # Requirement
+* python 2.7
 * JDK 1.8
 * git
 * automake1.4
