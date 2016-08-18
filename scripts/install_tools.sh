@@ -9,11 +9,11 @@ if [ -d $JIGGDIR ];
 then
   echo "jigg exist."
 else
-  git clone -b develop https://github.com/tomeken-yoshinaga/jigg.git
+  git clone -b intermediateInput https://github.com/tomeken-yoshinaga/jigg.git
   cd $JIGGDIR
   ./bin/sbt assembly
   mv ./target/*.jar bin
-  ./scripts/download_models.sh
+  ./script/download_models.sh
   mv ./*.jar bin
 fi
 

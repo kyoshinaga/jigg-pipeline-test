@@ -2,7 +2,10 @@
 import xml.etree.ElementTree as ET
 import json
 
-# These methods are borrowed from: https://bitbucket.org/ianb/formencode/src/tip/formencode/doctest_xml_compare.py?fileviewer=file-view-default#cl-70
+# To check two XML snippets are semantically equal, this method compares
+# each element recursively.
+# This methods are borrowed from:
+# https://bitbucket.org/ianb/formencode/src/tip/formencode/doctest_xml_compare.py?fileviewer=file-view-default#cl-70
 def xml_compare(x1, x2, reporter = None):
     if x1.tag != x2.tag:
         if reporter:
@@ -11,13 +14,13 @@ def xml_compare(x1, x2, reporter = None):
     for name, value in x1.attrib.items():
         if x2.attrib.get(name) != value:
             if reporter:
-                reporter('Attributes do not match: %s=%r, %s=%r'
+                reporter('Attributes do not match: %s=%r, %s=%r' \
                         % (name, value, name, x2.attrib(get(name))))
             return False
     for name in x2.attrib.keys():
         if name not in x1.attrib:
             if reporter:
-                reporter('x2 has an attribute x1 is mising: %s'
+                reporter('x2 has an attribute x1 is mising: %s' \
                         % name)
             return False
     if not xml_text_compare(x1.text, x2.text):
@@ -32,7 +35,7 @@ def xml_compare(x1, x2, reporter = None):
     cl2 = x2.getchildren()
     if len(cl1) != len(cl2):
         if reporter:
-            reporter('children length differs, %i != %i'
+            reporter('children length differs, %i != %i' \
                     % (len(cl1), len(cl2)))
         return False
     i = 0
@@ -40,7 +43,7 @@ def xml_compare(x1, x2, reporter = None):
         i += 1
         if not xml_compare(c1, c2, reporter=reporter):
             if reporter:
-                reporter('children %i do not match: %s'
+                reporter('children %i do not match: %s' \
                         % (i, c1.tag))
             return False
     return True

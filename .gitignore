@@ -8,4 +8,4 @@ xml/*.xml
 *.pyc
 .*
 syntaxnet
-jigg
+jigg/*

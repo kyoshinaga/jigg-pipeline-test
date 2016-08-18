@@ -2,6 +2,7 @@
 Repository for integrating test using by intermediate input option of jigg.
 
 # Requirement
+* JDK 1.8
 * git
 * automake1.4
 * gcc
@@ -11,10 +12,18 @@ Repository for integrating test using by intermediate input option of jigg.
 * maven
 
 # Workflow
-1. Download the model files.
+1. If you don't have `stanford-english-corenlp-2016-01-10-models.jar` and 
+`eng_sm6.gr`, run a following script.
 ```bash
 $ ./scripts/download-models.sh
 ```
+If you have them, 
+```bash
+$ mkdir models
+$ ln -s STANFORD_CORENLP_EDU_DIR ./edu
+$ ln -s ENG_GR ./models/
+```
+
 1. Install the required tools.
 ```bash
 $ ./scripts/install-tools.sh
