@@ -15,31 +15,49 @@ class TestSequenceFunctions(unittest.TestCase):
         self.reporter = True
 
         # Gold data
-        subprocess.call(cmd + ' -props ./props/english_ssplit_xml.properties')
-        subprocess.call(cmd + ' -props ./props/english_ssplit_json.properties')
-        subprocess.call(cmd + ' -props ./props/english_corenlp_tokenize_ssplit_xml.properties', shell = True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_tokenize_ssplit_json.properties', shell = True)
+        subprocess.call(cmd + ' -props ./props/english_ssplit_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/english_ssplit_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_tokenize_ssplit_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_tokenize_ssplit_json.properties', shell=True)
         subprocess.call(cmd + ' -props ./props/english_corenlp_pos_gold_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_pos_gold_json.properties', shell = True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_pos_gold_json.properties', shell=True)
         subprocess.call(cmd + ' -props ./props/english_corenlp_lemma_gold_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_lemma_gold_json.properties', shell = True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_lemma_gold_json.properties', shell=True)
         subprocess.call(cmd + ' -props ./props/english_corenlp_ner_gold_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_ner_gold_json.properties', shell = True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_ner_gold_json.properties', shell=True)
         subprocess.call(cmd + ' -props ./props/english_corenlp_parse_gold_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_parse_gold_json.properties', shell = True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_parse_gold_json.properties', shell=True)
         subprocess.call(cmd + ' -props ./props/english_corenlp_depparse_gold_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_depparse_gold_json.properties', shell = True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_depparse_gold_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_fromtoken_gold_xml.properties', shell = True)
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_fromtoken_gold_json.properties', shell = True)
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_frompos_gold_xml.properties', shell = True)
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_frompos_gold_json.properties', shell = True)
+        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_fromtoken_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_fromtoken_gold_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_frompos_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_frompos_gold_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_ssplit_xml.properties')
-        subprocess.call(cmd + ' -props ./props/japanese_ssplit_json.properties')
+        subprocess.call(cmd + ' -props ./props/japanese_ssplit_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/japanese_ssplit_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_kuromoji_gold_xml.properties')
-        subprocess.call(cmd + ' -props ./props/japanese_kuromoji_gold_json.properties')
+        subprocess.call(cmd + ' -props ./props/japanese_kuromoji_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/japanese_kuromoji_gold_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_mecab_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/japanese_mecab_gold_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_juman_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/japanese_juman_gold_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_cabocha_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/japanese_cabocha_gold_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_knp_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/japanese_knp_gold_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_knpdoc_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/japanese_knpdoc_gold_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_jaccg_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/japanese_jaccg_gold_json.properties', shell=True)
 
         # XML -> XML
         subprocess.call(cmd + ' -props ./props/english_corenlp_pos_test_xml.properties', shell=True)
@@ -48,51 +66,99 @@ class TestSequenceFunctions(unittest.TestCase):
         subprocess.call(cmd + ' -props ./props/english_corenlp_parse_test_xml.properties', shell=True)
         subprocess.call(cmd + ' -props ./props/english_corenlp_depparse_test_xml.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_fromtoken_test_xml.properties', shell = True)
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_frompos_test_xml.properties', shell = True)
+        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_fromtoken_test_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_frompos_test_xml.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_kuromoji_test_xml.properties')
+        subprocess.call(cmd + ' -props ./props/japanese_kuromoji_test_xml.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_mecab_test_xml.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_juman_test_xml.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_cabocha_test_xml.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_knp_test_xml.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_knpdoc_test_xml.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_jaccg_test_xml.properties', shell=True)
 
         # JSON -> JSON
-        subprocess.call(cmd + ' -props ./props/english_corenlp_pos_test_json.properties', shell = True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_lemma_test_json.properties', shell = True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_ner_test_json.properties', shell = True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_parse_test_json.properties', shell = True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_depparse_test_json.properties', shell = True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_pos_test_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_lemma_test_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_ner_test_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_parse_test_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_depparse_test_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_fromtoken_test_json.properties', shell = True)
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_frompos_test_json.properties', shell = True)
+        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_fromtoken_test_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_frompos_test_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_kuromoji_test_json.properties')
+        subprocess.call(cmd + ' -props ./props/japanese_kuromoji_test_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_mecab_test_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_juman_test_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_cabocha_test_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_knp_test_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_knpdoc_test_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_jaccg_test_json.properties', shell=True)
 
         # XML -> JSON
-        subprocess.call(cmd + ' -props ./props/english_corenlp_pos_test_xml_json.properties', shell = True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_lemma_test_xml_json.properties', shell = True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_ner_test_xml_json.properties', shell = True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_parse_test_xml_json.properties', shell = True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_depparse_test_xml_json.properties', shell = True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_pos_test_xml_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_lemma_test_xml_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_ner_test_xml_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_parse_test_xml_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_depparse_test_xml_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_fromtoken_test_xml_json.properties', shell = True)
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_frompos_test_xml_json.properties', shell = True)
+        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_fromtoken_test_xml_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_frompos_test_xml_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_kuromoji_test_xml_json.properties')
+        subprocess.call(cmd + ' -props ./props/japanese_kuromoji_test_xml_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_mecab_test_xml_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_juman_test_xml_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_cabocha_test_xml_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_knp_test_xml_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_knpdoc_test_xml_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_jaccg_test_xml_json.properties', shell=True)
 
         # JSON -> XML
-        subprocess.call(cmd + ' -props ./props/english_corenlp_pos_test_json_xml.properties', shell = True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_lemma_test_json_xml.properties', shell = True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_ner_test_json_xml.properties', shell = True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_parse_test_json_xml.properties', shell = True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_depparse_test_json_xml.properties', shell = True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_pos_test_json_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_lemma_test_json_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_ner_test_json_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_parse_test_json_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/english_corenlp_depparse_test_json_xml.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_fromtoken_test_json_xml.properties', shell = True)
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_frompos_test_json_xml.properties', shell = True)
+        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_fromtoken_test_json_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_frompos_test_json_xml.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_kuromoji_test_json_xml.properties')
+        subprocess.call(cmd + ' -props ./props/japanese_kuromoji_test_json_xml.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_mecab_test_json_xml.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_juman_test_json_xml.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_cabocha_test_json_xml.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_knp_test_json_xml.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_knpdoc_test_json_xml.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/japanese_jaccg_test_json_xml.properties', shell=True)
 
     def test_01_corenlp_1_pos(self):
-        testRoot = ET.parse('./xml/english_corenlp_pos_test.xml').getroot()
+        goldRoot     = ET.parse('./xml/english_corenlp_pos_gold.xml').getroot()
+        testRoot     = ET.parse('./xml/english_corenlp_pos_test.xml').getroot()
         testJsonRoot = ET.parse('./xml/english_corenlp_pos_test_json.xml').getroot()
-        goldRoot = ET.parse('./xml/english_corenlp_pos_gold.xml').getroot()
         self.assertTrue(cm.xml_compare(goldRoot, testRoot, self.reporter))
         self.assertTrue(cm.xml_compare(goldRoot, testJsonRoot, self.reporter))
         self.assertTrue(cm.json_comp('./json/english_corenlp_pos_gold.json', \
@@ -101,9 +167,9 @@ class TestSequenceFunctions(unittest.TestCase):
             './json/english_corenlp_pos_test.json'))
 
     def test_01_corenlp_2_lemma(self):
-        testRoot = ET.parse('./xml/english_corenlp_lemma_test.xml').getroot()
+        goldRoot     = ET.parse('./xml/english_corenlp_lemma_gold.xml').getroot()
+        testRoot     = ET.parse('./xml/english_corenlp_lemma_test.xml').getroot()
         testJsonRoot = ET.parse('./xml/english_corenlp_lemma_test_json.xml').getroot()
-        goldRoot = ET.parse('./xml/english_corenlp_lemma_gold.xml').getroot()
         self.assertTrue(cm.xml_compare(goldRoot, testRoot, self.reporter))
         self.assertTrue(cm.xml_compare(goldRoot, testJsonRoot, self.reporter))
         self.assertTrue(cm.json_comp('./json/english_corenlp_lemma_gold.json', \
@@ -112,9 +178,9 @@ class TestSequenceFunctions(unittest.TestCase):
             './json/english_corenlp_lemma_test.json'))
 
     def test_01_corenlp_3_ner(self):
-        testRoot = ET.parse('./xml/english_corenlp_ner_test.xml').getroot()
+        goldRoot     = ET.parse('./xml/english_corenlp_ner_gold.xml').getroot()
+        testRoot     = ET.parse('./xml/english_corenlp_ner_test.xml').getroot()
         testJsonRoot = ET.parse('./xml/english_corenlp_ner_test_json.xml').getroot()
-        goldRoot = ET.parse('./xml/english_corenlp_ner_gold.xml').getroot()
         self.assertTrue(cm.xml_compare(goldRoot, testRoot, self.reporter))
         self.assertTrue(cm.xml_compare(goldRoot, testJsonRoot, self.reporter))
         self.assertTrue(cm.json_comp('./json/english_corenlp_ner_gold.json', \
@@ -123,9 +189,9 @@ class TestSequenceFunctions(unittest.TestCase):
                                      './json/english_corenlp_ner_test.json'))
 
     def test_01_corenlp_4_parse(self):
-        testRoot = ET.parse('./xml/english_corenlp_parse_test.xml').getroot()
+        goldRoot     = ET.parse('./xml/english_corenlp_parse_gold.xml').getroot()
+        testRoot     = ET.parse('./xml/english_corenlp_parse_test.xml').getroot()
         testJsonRoot = ET.parse('./xml/english_corenlp_parse_test_json.xml').getroot()
-        goldRoot = ET.parse('./xml/english_corenlp_parse_gold.xml').getroot()
         self.assertTrue(cm.xml_compare(goldRoot, testRoot, self.reporter))
         self.assertTrue(cm.xml_compare(goldRoot, testJsonRoot, self.reporter))
         self.assertTrue(cm.json_comp('./json/english_corenlp_parse_gold.json', \
@@ -134,9 +200,9 @@ class TestSequenceFunctions(unittest.TestCase):
                                      './json/english_corenlp_parse_test.json'))
 
     def test_01_corenlp_5_depparse(self):
-        testRoot = ET.parse('./xml/english_corenlp_depparse_test.xml').getroot()
+        goldRoot     = ET.parse('./xml/english_corenlp_depparse_gold.xml').getroot()
+        testRoot     = ET.parse('./xml/english_corenlp_depparse_test.xml').getroot()
         testJsonRoot = ET.parse('./xml/english_corenlp_depparse_test_json.xml').getroot()
-        goldRoot = ET.parse('./xml/english_corenlp_depparse_gold.xml').getroot()
         self.assertTrue(cm.xml_compare(goldRoot, testRoot, self.reporter))
         self.assertTrue(cm.xml_compare(goldRoot, testJsonRoot, self.reporter))
         self.assertTrue(cm.json_comp('./json/english_corenlp_depparse_gold.json', \
@@ -145,9 +211,9 @@ class TestSequenceFunctions(unittest.TestCase):
                                      './json/english_corenlp_depparse_test.json'))
 
     def test_02_berkeleyparser_1_fromToken(self):
-        testRoot = ET.parse('./xml/english_berkeleyparser_fromtoken_test.xml').getroot()
+        goldRoot     = ET.parse('./xml/english_berkeleyparser_fromtoken_gold.xml').getroot()
+        testRoot     = ET.parse('./xml/english_berkeleyparser_fromtoken_test.xml').getroot()
         testJsonRoot = ET.parse('./xml/english_berkeleyparser_fromtoken_test_json.xml').getroot()
-        goldRoot = ET.parse('./xml/english_berkeleyparser_fromtoken_gold.xml').getroot()
         self.assertTrue(cm.xml_compare(goldRoot, testRoot, self.reporter))
         self.assertTrue(cm.xml_compare(goldRoot, testJsonRoot, self.reporter))
         self.assertTrue(cm.json_comp('./json/english_berkeleyparser_fromtoken_gold.json', \
@@ -156,9 +222,9 @@ class TestSequenceFunctions(unittest.TestCase):
                                      './json/english_berkeleyparser_fromtoken_test.json'))
 
     def test_02_berkeleyparser_2_fromPOS(self):
-        testRoot = ET.parse('./xml/english_berkeleyparser_frompos_test.xml').getroot()
+        goldRoot     = ET.parse('./xml/english_berkeleyparser_frompos_gold.xml').getroot()
+        testRoot     = ET.parse('./xml/english_berkeleyparser_frompos_test.xml').getroot()
         testJsonRoot = ET.parse('./xml/english_berkeleyparser_frompos_test_json.xml').getroot()
-        goldRoot = ET.parse('./xml/english_berkeleyparser_frompos_gold.xml').getroot()
         self.assertTrue(cm.xml_compare(goldRoot, testRoot, self.reporter))
         self.assertTrue(cm.xml_compare(goldRoot, testJsonRoot, self.reporter))
         self.assertTrue(cm.json_comp('./json/english_berkeleyparser_frompos_gold.json', \
@@ -167,9 +233,9 @@ class TestSequenceFunctions(unittest.TestCase):
                                      './json/english_berkeleyparser_frompos_test.json'))
 
     def test_03_kuromoji(self):
-        testRoot = ET.parse('./xml/japanese_kuromoji_test.xml').getroot()
+        goldRoot     = ET.parse('./xml/japanese_kuromoji_gold.xml').getroot()
+        testRoot     = ET.parse('./xml/japanese_kuromoji_test.xml').getroot()
         testJsonRoot = ET.parse('./xml/japanese_kuromoji_test_json.xml').getroot()
-        goldRoot = ET.parse('./xml/japanese_kuromoji_gold.xml').getroot()
         self.assertTrue(cm.xml_compare(goldRoot, testRoot, self.reporter))
         self.assertTrue(cm.xml_compare(goldRoot, testJsonRoot, self.reporter))
         self.assertTrue(cm.json_comp('./json/japanese_kuromoji_gold.json', \
@@ -178,22 +244,70 @@ class TestSequenceFunctions(unittest.TestCase):
                                      './json/japanese_kuromoji_test.json'))
 
     def test_04_mecab(self):
-        self.assertTrue(1 == 1)
+        goldRoot     = ET.parse('./xml/japanese_mecab_gold.xml').getroot()
+        testRoot     = ET.parse('./xml/japanese_mecab_test.xml').getroot()
+        testJsonRoot = ET.parse('./xml/japanese_mecab_test_json.xml').getroot()
+        self.assertTrue(cm.xml_compare(goldRoot, testRoot, self.reporter))
+        self.assertTrue(cm.xml_compare(goldRoot, testJsonRoot, self.reporter))
+        self.assertTrue(cm.json_comp('./json/japanese_mecab_gold.json', \
+                                     './json/japanese_mecab_test_xml.json'))
+        self.assertTrue(cm.json_comp('./json/japanese_mecab_gold.json', \
+                                     './json/japanese_mecab_test.json'))
 
     def test_05_juman(self):
-        self.assertTrue(1 == 1)
+        goldRoot     = ET.parse('./xml/japanese_juman_gold.xml').getroot()
+        testRoot     = ET.parse('./xml/japanese_juman_test.xml').getroot()
+        testJsonRoot = ET.parse('./xml/japanese_juman_test_json.xml').getroot()
+        self.assertTrue(cm.xml_compare(goldRoot, testRoot, self.reporter))
+        self.assertTrue(cm.xml_compare(goldRoot, testJsonRoot, self.reporter))
+        self.assertTrue(cm.json_comp('./json/japanese_juman_gold.json', \
+                                     './json/japanese_juman_test_xml.json'))
+        self.assertTrue(cm.json_comp('./json/japanese_juman_gold.json', \
+                                     './json/japanese_juman_test.json'))
 
     def test_06_cabocha(self):
-        self.assertTrue(1 == 1)
+        goldRoot     = ET.parse('./xml/japanese_cabocha_gold.xml').getroot()
+        testRoot     = ET.parse('./xml/japanese_cabocha_test.xml').getroot()
+        testJsonRoot = ET.parse('./xml/japanese_cabocha_test_json.xml').getroot()
+        self.assertTrue(cm.xml_compare(goldRoot, testRoot, self.reporter))
+        self.assertTrue(cm.xml_compare(goldRoot, testJsonRoot, self.reporter))
+        self.assertTrue(cm.json_comp('./json/japanese_cabocha_gold.json', \
+                                     './json/japanese_cabocha_test_xml.json'))
+        self.assertTrue(cm.json_comp('./json/japanese_cabocha_gold.json', \
+                                     './json/japanese_cabocha_test.json'))
 
     def test_07_knp_1_knp(self):
-        self.assertTrue(1 == 1)
+        goldRoot     = ET.parse('./xml/japanese_knp_gold.xml').getroot()
+        testRoot     = ET.parse('./xml/japanese_knp_test.xml').getroot()
+        testJsonRoot = ET.parse('./xml/japanese_knp_test_json.xml').getroot()
+        self.assertTrue(cm.xml_compare(goldRoot, testRoot, self.reporter))
+        self.assertTrue(cm.xml_compare(goldRoot, testJsonRoot, self.reporter))
+        self.assertTrue(cm.json_comp('./json/japanese_knp_gold.json', \
+                                     './json/japanese_knp_test_xml.json'))
+        self.assertTrue(cm.json_comp('./json/japanese_knp_gold.json', \
+                                     './json/japanese_knp_test.json'))
 
     def test_07_knp_2_knpDoc(self):
-        self.assertTrue(1 == 1)
+        goldRoot     = ET.parse('./xml/japanese_knpdoc_gold.xml').getroot()
+        testRoot     = ET.parse('./xml/japanese_knpdoc_test.xml').getroot()
+        testJsonRoot = ET.parse('./xml/japanese_knpdoc_test_json.xml').getroot()
+        self.assertTrue(cm.xml_compare(goldRoot, testRoot, self.reporter))
+        self.assertTrue(cm.xml_compare(goldRoot, testJsonRoot, self.reporter))
+        self.assertTrue(cm.json_comp('./json/japanese_knpdoc_gold.json', \
+                                     './json/japanese_knpdoc_test_xml.json'))
+        self.assertTrue(cm.json_comp('./json/japanese_knpdoc_gold.json', \
+                                     './json/japanese_knpdoc_test.json'))
 
     def test_08_jaccg(self):
-        self.assertTrue(1 == 1)
+        goldRoot     = ET.parse('./xml/japanese_jaccg_gold.xml').getroot()
+        testRoot     = ET.parse('./xml/japanese_jaccg_test.xml').getroot()
+        testJsonRoot = ET.parse('./xml/japanese_jaccg_test_json.xml').getroot()
+        self.assertTrue(cm.xml_compare(goldRoot, testRoot, self.reporter))
+        self.assertTrue(cm.xml_compare(goldRoot, testJsonRoot, self.reporter))
+        self.assertTrue(cm.json_comp('./json/japanese_jaccg_gold.json', \
+                                     './json/japanese_jaccg_test_xml.json'))
+        self.assertTrue(cm.json_comp('./json/japanese_jaccg_gold.json', \
+                                     './json/japanese_jaccg_test.json'))
 
     def test_09_syntaxnet_1_pos(self):
         self.assertTrue(1 == 1)

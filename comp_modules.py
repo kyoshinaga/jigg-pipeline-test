@@ -15,7 +15,7 @@ def xml_compare(x1, x2, reporter = False):
         if x2.attrib.get(name) != value:
             if reporter:
                 print('Attributes do not match: %s=%r, %s=%r' \
-                        % (name, value, name, x2.attrib.get(name))))
+                        % (name, value, name, x2.attrib.get(name)))
             return False
     for name in x2.attrib.keys():
         if name not in x1.attrib:
