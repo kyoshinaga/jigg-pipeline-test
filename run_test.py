@@ -36,6 +36,15 @@ class TestSequenceFunctions(unittest.TestCase):
         subprocess.call(cmd + ' -props ./props/berkeleyparser/english_berkeleyparser_frompos_gold_xml.properties', shell=True)
         subprocess.call(cmd + ' -props ./props/berkeleyparser/english_berkeleyparser_frompos_gold_json.properties', shell=True)
 
+        subprocess.call(cmd + ' -props ./props/syntaxnet/english_syntaxnet_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/syntaxnet/english_syntaxnet_gold_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/syntaxnetpos/english_syntaxnetpos_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/syntaxnetpos/english_syntaxnetpos_gold_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/syntaxnetparse/english_syntaxnetparse_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/syntaxnetparse/english_syntaxnetparse_gold_json.properties', shell=True)
+
         subprocess.call(cmd + ' -props ./props/japanese_ssplit_xml.properties', shell=True)
         subprocess.call(cmd + ' -props ./props/japanese_ssplit_json.properties', shell=True)
 
@@ -70,7 +79,13 @@ class TestSequenceFunctions(unittest.TestCase):
         subprocess.call(cmd + ' -props ./props/berkeleyparser/english_berkeleyparser_fromtoken_test_xml.properties', shell=True)
         subprocess.call(cmd + ' -props ./props/berkeleyparser/english_berkeleyparser_frompos_test_xml.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/kuromoji/japanese_kuromoji_test_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/syntaxnet/english_syntaxnet_test_xml.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/syntaxnetpos/english_syntaxnetpos_test_xml.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/syntaxnetparse/english_syntaxnetparse_test_xml.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/kuromoji/japanese_kuromoji_test_xml.properties', # shell=True)
 
         subprocess.call(cmd + ' -props ./props/mecab/japanese_mecab_test_xml.properties', shell=True)
 
@@ -93,6 +108,12 @@ class TestSequenceFunctions(unittest.TestCase):
 
         subprocess.call(cmd + ' -props ./props/berkeleyparser/english_berkeleyparser_fromtoken_test_json.properties', shell=True)
         subprocess.call(cmd + ' -props ./props/berkeleyparser/english_berkeleyparser_frompos_test_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/syntaxnet/english_syntaxnet_test_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/syntaxnetpos/english_syntaxnetpos_test_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/syntaxnetparse/english_syntaxnetparse_test_json.properties', shell=True)
 
         subprocess.call(cmd + ' -props ./props/kuromoji/japanese_kuromoji_test_json.properties', shell=True)
 
@@ -118,6 +139,12 @@ class TestSequenceFunctions(unittest.TestCase):
         subprocess.call(cmd + ' -props ./props/berkeleyparser/english_berkeleyparser_fromtoken_test_xml_json.properties', shell=True)
         subprocess.call(cmd + ' -props ./props/berkeleyparser/english_berkeleyparser_frompos_test_xml_json.properties', shell=True)
 
+        subprocess.call(cmd + ' -props ./props/syntaxnet/english_syntaxnet_test_xml_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/syntaxnetpos/english_syntaxnetpos_test_xml_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/syntaxnetparse/english_syntaxnetparse_test_xml_json.properties', shell=True)
+
         subprocess.call(cmd + ' -props ./props/kuromoji/japanese_kuromoji_test_xml_json.properties', shell=True)
 
         subprocess.call(cmd + ' -props ./props/mecab/japanese_mecab_test_xml_json.properties', shell=True)
@@ -141,6 +168,12 @@ class TestSequenceFunctions(unittest.TestCase):
 
         subprocess.call(cmd + ' -props ./props/berkeleyparser/english_berkeleyparser_fromtoken_test_json_xml.properties', shell=True)
         subprocess.call(cmd + ' -props ./props/berkeleyparser/english_berkeleyparser_frompos_test_json_xml.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/syntaxnet/english_syntaxnet_test_json_xml.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/syntaxnetpos/english_syntaxnetpos_test_json_xml.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/syntaxnetparse/english_syntaxnetparse_test_json_xml.properties', shell=True)
 
         subprocess.call(cmd + ' -props ./props/kuromoji/japanese_kuromoji_test_json_xml.properties', shell=True)
 
@@ -310,17 +343,38 @@ class TestSequenceFunctions(unittest.TestCase):
         self.assertTrue(cm.json_comp('./json/japanese_jaccg_gold.json', \
                                      './json/japanese_jaccg_test.json'))
 
-    def test_09_syntaxnet_1_pos(self):
-        self.assertTrue(1 == 1)
-
-    def test_09_syntaxnet_2_basicDependencies(self):
-        self.assertTrue(1 == 1)
+    def test_09_syntaxnet(self):
+        goldRoot     = ET.parse('./xml/english_syntaxnet_gold.xml').getroot()
+        testRoot     = ET.parse('./xml/english_syntaxnet_test.xml').getroot()
+        testJsonRoot = ET.parse('./xml/english_syntaxnet_test_json.xml').getroot()
+        self.assertTrue(cm.xml_compare(goldRoot, testRoot, self.reporter))
+        self.assertTrue(cm.xml_compare(goldRoot, testJsonRoot, self.reporter))
+        self.assertTrue(cm.json_comp('./json/english_syntaxnet_gold.json', \
+                                     './json/english_syntaxnet_test_xml.json'))
+        self.assertTrue(cm.json_comp('./json/english_syntaxnet_gold.json', \
+                                     './json/english_syntaxnet_test.json'))
 
     def test_10_syntaxnetpos(self):
-        self.assertTrue(1 == 1)
+        goldRoot     = ET.parse('./xml/english_syntaxnetpos_gold.xml').getroot()
+        testRoot     = ET.parse('./xml/english_syntaxnetpos_test.xml').getroot()
+        testJsonRoot = ET.parse('./xml/english_syntaxnetpos_test_json.xml').getroot()
+        self.assertTrue(cm.xml_compare(goldRoot, testRoot, self.reporter))
+        self.assertTrue(cm.xml_compare(goldRoot, testJsonRoot, self.reporter))
+        self.assertTrue(cm.json_comp('./json/english_syntaxnetpos_gold.json', \
+                                     './json/english_syntaxnetpos_test_xml.json'))
+        self.assertTrue(cm.json_comp('./json/english_syntaxnetpos_gold.json', \
+                                     './json/english_syntaxnetpos_test.json'))
 
     def test_11_syntaxnetparser(self):
-        self.assertTrue(1 == 1)
+        goldRoot     = ET.parse('./xml/english_syntaxnetparse_gold.xml').getroot()
+        testRoot     = ET.parse('./xml/english_syntaxnetparse_test.xml').getroot()
+        testJsonRoot = ET.parse('./xml/english_syntaxnetparse_test_json.xml').getroot()
+        self.assertTrue(cm.xml_compare(goldRoot, testRoot, self.reporter))
+        self.assertTrue(cm.xml_compare(goldRoot, testJsonRoot, self.reporter))
+        self.assertTrue(cm.json_comp('./json/english_syntaxnetparse_gold.json', \
+                                     './json/english_syntaxnetparse_test_xml.json'))
+        self.assertTrue(cm.json_comp('./json/english_syntaxnetparse_gold.json', \
+                                     './json/english_syntaxnetparse_test.json'))
 
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(TestSequenceFunctions)

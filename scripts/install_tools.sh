@@ -91,27 +91,27 @@ else
 fi
 
 # syntaxnet
-BAZEL="https://github.com/bazelbuild/bazel/releases/download/0.2.2b/bazel_0.2.2b-jdk7-linux-x86_64.deb"
-if type "bazel" > /dev/null;
-then
-  echo "bazel exists."
-else
-  wget -P $MODELDIR $BAZEL
-  cd $MODELDIR
-  sudo dpkg -i bazel_0.2.2b-jdk7-linux-x86_64.deb
-  sudo apt-get -y -q install swig
-fi
-
-SYNTAXNET="https://github.com/tensorflow/models.git"
-if [ -d $MODELDIR/syntaxnet ];
-then
-  echo "syntaxnet exists."
-else
-  git clone --recursive $SYNTAXNET $MODELDIR/syntaxnet
-  cd $MODELDIR/syntaxnet/syntaxnet/tensorflow
-  ./configure
-  cd ..
-  bazel test syntaxnet/... util/utf8/...
-fi
+#BAZEL="https://github.com/bazelbuild/bazel/releases/download/0.2.2b/bazel_0.2.2b-jdk7-linux-x86_64.deb"
+#if type "bazel" > /dev/null;
+#then
+#  echo "bazel exists."
+#else
+#  wget -P $MODELDIR $BAZEL
+#  cd $MODELDIR
+#  sudo dpkg -i bazel_0.2.2b-jdk7-linux-x86_64.deb
+#  sudo apt-get -y -q install swig
+#fi
+#
+#SYNTAXNET="https://github.com/tensorflow/models.git"
+#if [ -d $MODELDIR/syntaxnet ];
+#then
+#  echo "syntaxnet exists."
+#else
+#  git clone --recursive $SYNTAXNET $MODELDIR/syntaxnet
+#  cd $MODELDIR/syntaxnet/syntaxnet/tensorflow
+#  ./configure
+#  cd ..
+#  bazel test syntaxnet/... util/utf8/...
+#fi
 
 cd $WORKDIR
