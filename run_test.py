@@ -72,7 +72,7 @@ class TestSequenceFunctions(unittest.TestCase):
 
         subprocess.call(cmd + ' -props ./props/kuromoji/japanese_kuromoji_test_xml.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/macab/japanese_mecab_test_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/mecab/japanese_mecab_test_xml.properties', shell=True)
 
         subprocess.call(cmd + ' -props ./props/juman/japanese_juman_test_xml.properties', shell=True)
 
