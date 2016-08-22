@@ -17,143 +17,144 @@ class TestSequenceFunctions(unittest.TestCase):
         # Gold data
         subprocess.call(cmd + ' -props ./props/english_ssplit_xml.properties', shell=True)
         subprocess.call(cmd + ' -props ./props/english_ssplit_json.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_tokenize_ssplit_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_tokenize_ssplit_json.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_pos_gold_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_pos_gold_json.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_lemma_gold_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_lemma_gold_json.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_ner_gold_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_ner_gold_json.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_parse_gold_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_parse_gold_json.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_depparse_gold_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_depparse_gold_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_fromtoken_gold_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_fromtoken_gold_json.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_frompos_gold_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_frompos_gold_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_tokenize_ssplit_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_tokenize_ssplit_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_pos_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_pos_gold_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_lemma_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_lemma_gold_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_ner_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_ner_gold_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_parse_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_parse_gold_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_depparse_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_depparse_gold_json.properties', shell=True)
+
+        subprocess.call(cmd + ' -props ./props/berkeleyparser/english_berkeleyparser_fromtoken_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/berkeleyparser/english_berkeleyparser_fromtoken_gold_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/berkeleyparser/english_berkeleyparser_frompos_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/berkeleyparser/english_berkeleyparser_frompos_gold_json.properties', shell=True)
 
         subprocess.call(cmd + ' -props ./props/japanese_ssplit_xml.properties', shell=True)
         subprocess.call(cmd + ' -props ./props/japanese_ssplit_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_kuromoji_gold_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/japanese_kuromoji_gold_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/kuromoji/japanese_kuromoji_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/kuromoji/japanese_kuromoji_gold_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_mecab_gold_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/japanese_mecab_gold_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/mecab/japanese_mecab_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/mecab/japanese_mecab_gold_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_juman_gold_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/japanese_juman_gold_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/juman/japanese_juman_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/juman/japanese_juman_gold_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_cabocha_gold_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/japanese_cabocha_gold_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/cabocha/japanese_cabocha_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/cabocha/japanese_cabocha_gold_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_knp_gold_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/japanese_knp_gold_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/knp/japanese_knp_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/knp/japanese_knp_gold_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_knpdoc_gold_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/japanese_knpdoc_gold_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/knpdoc/japanese_knpdoc_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/knpdoc/japanese_knpdoc_gold_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_jaccg_gold_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/japanese_jaccg_gold_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/jaccg/japanese_jaccg_gold_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/jaccg/japanese_jaccg_gold_json.properties', shell=True)
 
         # XML -> XML
-        subprocess.call(cmd + ' -props ./props/english_corenlp_pos_test_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_lemma_test_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_ner_test_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_parse_test_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_depparse_test_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_pos_test_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_lemma_test_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_ner_test_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_parse_test_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_depparse_test_xml.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_fromtoken_test_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_frompos_test_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/berkeleyparser/english_berkeleyparser_fromtoken_test_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/berkeleyparser/english_berkeleyparser_frompos_test_xml.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_kuromoji_test_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/kuromoji/japanese_kuromoji_test_xml.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_mecab_test_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/macab/japanese_mecab_test_xml.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_juman_test_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/juman/japanese_juman_test_xml.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_cabocha_test_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/cabocha/japanese_cabocha_test_xml.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_knp_test_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/knp/japanese_knp_test_xml.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_knpdoc_test_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/knpdoc/japanese_knpdoc_test_xml.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_jaccg_test_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/jaccg/japanese_jaccg_test_xml.properties', shell=True)
 
         # JSON -> JSON
-        subprocess.call(cmd + ' -props ./props/english_corenlp_pos_test_json.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_lemma_test_json.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_ner_test_json.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_parse_test_json.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_depparse_test_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_pos_test_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_lemma_test_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_ner_test_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_parse_test_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_depparse_test_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_fromtoken_test_json.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_frompos_test_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/berkeleyparser/english_berkeleyparser_fromtoken_test_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/berkeleyparser/english_berkeleyparser_frompos_test_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_kuromoji_test_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/kuromoji/japanese_kuromoji_test_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_mecab_test_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/mecab/japanese_mecab_test_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_juman_test_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/juman/japanese_juman_test_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_cabocha_test_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/cabocha/japanese_cabocha_test_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_knp_test_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/knp/japanese_knp_test_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_knpdoc_test_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/knpdoc/japanese_knpdoc_test_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_jaccg_test_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/jaccg/japanese_jaccg_test_json.properties', shell=True)
 
         # XML -> JSON
-        subprocess.call(cmd + ' -props ./props/english_corenlp_pos_test_xml_json.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_lemma_test_xml_json.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_ner_test_xml_json.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_parse_test_xml_json.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_depparse_test_xml_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_pos_test_xml_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_lemma_test_xml_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_ner_test_xml_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_parse_test_xml_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_depparse_test_xml_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_fromtoken_test_xml_json.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_frompos_test_xml_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/berkeleyparser/english_berkeleyparser_fromtoken_test_xml_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/berkeleyparser/english_berkeleyparser_frompos_test_xml_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_kuromoji_test_xml_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/kuromoji/japanese_kuromoji_test_xml_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_mecab_test_xml_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/mecab/japanese_mecab_test_xml_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_juman_test_xml_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/juman/japanese_juman_test_xml_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_cabocha_test_xml_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/cabocha/japanese_cabocha_test_xml_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_knp_test_xml_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/knp/japanese_knp_test_xml_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_knpdoc_test_xml_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/knpdoc/japanese_knpdoc_test_xml_json.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_jaccg_test_xml_json.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/jaccg/japanese_jaccg_test_xml_json.properties', shell=True)
 
         # JSON -> XML
-        subprocess.call(cmd + ' -props ./props/english_corenlp_pos_test_json_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_lemma_test_json_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_ner_test_json_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_parse_test_json_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_corenlp_depparse_test_json_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_pos_test_json_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_lemma_test_json_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_ner_test_json_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_parse_test_json_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/corenlp/english_corenlp_depparse_test_json_xml.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_fromtoken_test_json_xml.properties', shell=True)
-        subprocess.call(cmd + ' -props ./props/english_berkeleyparser_frompos_test_json_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/berkeleyparser/english_berkeleyparser_fromtoken_test_json_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/berkeleyparser/english_berkeleyparser_frompos_test_json_xml.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_kuromoji_test_json_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/kuromoji/japanese_kuromoji_test_json_xml.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_mecab_test_json_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/mecab/japanese_mecab_test_json_xml.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_juman_test_json_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/juman/japanese_juman_test_json_xml.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_cabocha_test_json_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/cabocha/japanese_cabocha_test_json_xml.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_knp_test_json_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/knp/japanese_knp_test_json_xml.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_knpdoc_test_json_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/knpdoc/japanese_knpdoc_test_json_xml.properties', shell=True)
 
-        subprocess.call(cmd + ' -props ./props/japanese_jaccg_test_json_xml.properties', shell=True)
+        subprocess.call(cmd + ' -props ./props/jaccg/japanese_jaccg_test_json_xml.properties', shell=True)
 
     def test_01_corenlp_1_pos(self):
         goldRoot     = ET.parse('./xml/english_corenlp_pos_gold.xml').getroot()
